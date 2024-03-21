@@ -1,9 +1,12 @@
 package com.example.movies.adapter
 
+
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+
 import androidx.recyclerview.widget.RecyclerView
+import com.example.movies.R
 import com.example.movies.data.New_item
 import com.example.movies.databinding.ItemMovieBinding
 import com.squareup.picasso.Picasso
@@ -28,6 +31,7 @@ class MovieAdapter (private var items:List<New_item> = listOf(), val onClickList
             onClickListener(position)
         }
 
+
     }
     fun updateItems(results: List<New_item>?) = if (results != null) {
         items = results
@@ -42,6 +46,11 @@ class ViewHolder(val binding:ItemMovieBinding): RecyclerView.ViewHolder(binding.
     fun bind(listMovie: New_item) {
         binding.textMovie.text = listMovie.title
         Picasso.get().load(listMovie.poster).into(binding.imageMovie)
+
+        binding.titleText.text=listMovie.title
+
+        binding.typeMovie.text= listMovie.type
+        binding.yearMovie.text=listMovie.year
 
     }
 }

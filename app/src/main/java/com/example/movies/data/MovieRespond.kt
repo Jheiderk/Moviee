@@ -16,6 +16,7 @@ data class MovieRespond (
         @SerializedName("imdbID") val imdbId:String,
         @SerializedName("Title") val title:String,
         @SerializedName("Year") val year:String,
+        @SerializedName("Type") val type:String,
         @SerializedName("Poster") val poster:String,
         @SerializedName("Plot") val plot:String,
         @SerializedName("Runtime") val runtime:String,
